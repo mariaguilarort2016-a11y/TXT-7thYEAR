@@ -10,6 +10,15 @@
 
     <body style="margin: 0; overflow: hidden;">
         <img src="espinas.png" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; object-fit: cover; z-index: 9999; pointer-events: none;" />
+        <audio id="bg-music" src="musica.m4a" loop></audio>
+<script>
+  document.addEventListener('click', function() {
+    var audio = document.getElementById('bg-music');
+    if (audio.paused) {
+      audio.play();
+    }
+  }, { once: true });
+</script>
         <a-scene
             vr-mode-ui="enabled: false;"
             loading-screen="enabled: false;"
