@@ -10,23 +10,8 @@
 
     <body style="margin: 0; overflow: hidden;">
         <img src="espinas.png" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; object-fit: cover; z-index: 9999; pointer-events: none;" />
-       <audio id="bg-music" src="Musica.m4a" preload="auto" loop playsinline></audio>
-<script>
-  (function() {
-    var audio = document.getElementById('bg-music');
-    function iniciarAudio() {
-      if (audio && audio.paused) {
-        audio.play().catch(function(e) {});
-      }
-    }
-    window.addEventListener('touchstart', iniciarAudio, { passive: true });
-    window.addEventListener('click', iniciarAudio);
-    var marker = document.querySelector('a-marker');
-    if (marker) {
-      marker.addEventListener('markerFound', iniciarAudio);
-    }
-  })();
-</script>
+        <audio id="bg-music" src="Musica.m4a" loop playsinline></audio>
+<button id="music-btn" onclick="var a=document.getElementById('bg-music'); if(a.paused){a.play(); this.innerText='🔊';}else{a.pause(); this.innerText='🔇';}" style="position: fixed; top: 18px; right: 18px; z-index: 10000; background: rgba(0, 0, 0, 0.65); color: #ff1493; border: 2px solid #ff1493; border-radius: 50%; width: 46px; height: 46px; font-size: 20px; cursor: pointer; display: flex; align-items: center; justify-content: center;">🔇</button>
         <a-scene
             vr-mode-ui="enabled: false;"
             loading-screen="enabled: false;"
